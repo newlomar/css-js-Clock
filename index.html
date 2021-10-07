@@ -74,14 +74,17 @@
 
   <script>
 
-    const h1 = document.querySelector("[data-js='h1'")
-    console.log(h1)
-    setInterval(() => {
+    const displayCurrentTime = (element) => {
       const currentDate = new Date()
-      const currentHour = currentDate.getHours()
-      const currentMinutes = currentDate.getMinutes()
+      const currentHour = currentDate.getHours() >= 10 ? currentDate.getHours() : '0' + String(currentDate.getHours())
+      const currentMinutes = currentDate.getMinutes() >= 10 ? currentDate.getMinutes() : '0' + String(currentDate.getMinutes())
       const currentSeconds = currentDate.getSeconds() >= 10 ? currentDate.getSeconds() : '0' + String(currentDate.getSeconds())
-      h1.textContent = `${currentHour}:${currentMinutes}:${currentSeconds}`
+      element.textContent = `${currentHour}:${currentMinutes}:${currentSeconds}`
+    }
+
+    const h1 = document.querySelector("[data-js='h1'")
+    setInterval(() => {
+      displayCurrentTime(h1)
     }, 1000)
 
 
