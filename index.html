@@ -100,19 +100,23 @@
       hourStick.style.transform = `rotate(${(Number(h) - 9) * 30}deg)`
 
       let minutesStick = document.querySelector(".min-hand")
-      minutesStick.style.transform = `rotate(${(Number(m - 45)) * 6}deg)`
+      minutesStick.style.transform = `rotate(${(Number(m) - 45) * 6}deg)`
       
       let secondsStick = document.querySelector(".second-hand")
-      secondsStick.style.transform = `rotate(${(Number(s - 45) * 6)}deg)`
+      secondsStick.style.transform = `rotate(${(Number(s) - 45) * 6}deg)`
 
     }
 
     const h1 = document.querySelector("[data-js='h1'")
+    
     setInterval(() => {
       displayCurrentTime(h1)
       updateClock()
     }, 1000)
 
+
+    displayCurrentTime(h1)
+    updateClock()
 
   </script>
 </body>
