@@ -96,24 +96,27 @@
 
       const { h, m, s } = getTime();
 
+      // + 90 no final é porque as barras começam em 9:45:45 (comente todo o script para visualizar)
+
       let hourStick = document.querySelector(".hour-hand")
-      hourStick.style.transform = `rotate(${(Number(h) - 9) * 30}deg)`
+      hourStick.style.transform = `rotate(${(Number(h) * 30) + (Number(m) / 10 ) + 90}deg)`
 
       let minutesStick = document.querySelector(".min-hand")
-      minutesStick.style.transform = `rotate(${(Number(m) - 45) * 6}deg)`
+      minutesStick.style.transform = `rotate(${(Number(m) * 6) + (Number(s) / 10 ) + 90}deg)`
       
+
       let secondsStick = document.querySelector(".second-hand")
-      secondsStick.style.transform = `rotate(${(Number(s) - 45) * 6}deg)`
+      secondsStick.style.backgroundColor = 'red'
+      secondsStick.style.transform = `rotate(${(Number(s) * 6) + 90}deg)`
 
     }
 
     const h1 = document.querySelector("[data-js='h1'")
-    
+
     setInterval(() => {
       displayCurrentTime(h1)
       updateClock()
     }, 1000)
-
 
     displayCurrentTime(h1)
     updateClock()
