@@ -2,4 +2,4 @@
 
 ## O relógio reflete o horário atual em um relógio de ponteiros. Feito com HTML, CSS e Javascript
 
-### Acesso-o através do link: 
+### Acesso-o através do link: https://wonderful-turing-594f03.netlify.app/
